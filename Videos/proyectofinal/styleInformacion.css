@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('imagenes/celular.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+/* Estilo para el encabezado */
+/* Estilo para el encabezado */
+#show-form {
+    display: inline-block;
+    position: relative;
+    font-size: 2em;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    border-radius: 50px; /* Radio para hacer un círculo */
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra del contenedor */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    z-index: 1; /* Asegura que esté encima del círculo */
+}
+
+/* Pseudo-elemento para el círculo */
+/* Estilo para el encabezado */
+#show-form {
+    display: inline-block;
+    position: relative;
+    font-size: 2em;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    border-radius: 50px; /* Radio para hacer un círculo */
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra del contenedor */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    z-index: 1; /* Asegura que esté encima del círculo */
+}
+
+/* Pseudo-elemento para el círculo */
+#show-form::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(-20px - 20px); /* Alinea el círculo a la izquierda del texto */
+    transform: translateY(-50%) translateX(0); /* Inicialmente no se mueve */
+    width: 20px;
+    height: 20px;
+    background-color: #1E90FF;
+    border-radius: 50%; /* Hace un círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra del círculo */
+    transition: transform 0.3s ease-out, left 0.3s ease-out; /* Transición para la animación de movimiento */
+    z-index: -1; /* Detrás del texto */
+}
+
+/* Estilo para el encabezado al pasar el cursor */
+#show-form:hover::before {
+    transform: translateY(-50%) translateX(30px); /* Mueve el círculo horizontalmente al pasar el cursor */
+    left: -40px; /* Ajusta la posición izquierda del círculo al moverse */
+}
+
+/* Estilo para el encabezado al pasar el cursor */
+#show-form:hover {
+    background-color: red; /* Cambia el color de fondo al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Cambia la sombra al pasar el cursor */
+}
+
+
+
+h1 {
+    font-size: 3em;
+    color: #1E90FF;
+}
+
+.container-img {
+    width: 200px; /* Ancho deseado para las imágenes img1 */
+    height: 200px; /* Altura deseada para las imágenes img1 */
+    object-fit: cover; /* Ajuste del contenido manteniendo la relación de aspecto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 10px; /* Margen derecho para separar las imágenes */
+}
+.img1 {
+    width: 300px; /* Ancho deseado para las imágenes img1 */
+    height: 150px; /* Altura deseada para las imágenes img1 */
+    object-fit: cover; /* Ajuste del contenido manteniendo la relación de aspecto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 40px;
+    margin-right: 10px; /* Margen derecho para separar las imágenes */
+}
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para los campos del formulario */
+form .field {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilos para el botón de enviar */
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button[type="submit"]:hover {
+    background-color: red;
+}
+
+/* Estilos para los mensajes de éxito o error */
+form .form-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+form .form-success {
+    background-color: #dff0d8;
+    border: 1px solid #d0e9c6;
+    color: #3c763d;
+}
+
+form .form-error {
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+ul {
+    list-style-type: none; /* Elimina los estilos por defecto de la lista */
+    padding: 0;
+}
+
+ul li {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+ul li:before {
+    content: "\2022"; /* Utiliza un bullet personalizado (punto negro) */
+    color: #1E90FF; /* Color del bullet */
+    font-size: 1.5em;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Alinea el bullet con el texto */
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+    <div class="login-form" id="loginForm">
+        <form>
+            <div>
+                <img src="imagenes/logo.png" alt="Logo" class="container-img">
+                <h2>Iniciar Sesión</h2>
+                <label for="emailLogin">Correo Electrónico</label>
+                <input type="email" id="emailLogin" name="emailLogin" required>
+            </div>
+            <div>
+                <label for="passwordLogin">Contraseña</label>
+                <input type="password" id="passwordLogin" name="passwordLogin" required>
+            </div>
+            <p class="registra">Si no tienes cuenta, <a href="#" onclick="showRegisterForm()">regístrate aquí</a></p>
+            <button type="button" class="login-btn" onclick="login()">Acceder</button>
+        </form>
+    </div>
+
+    <div class="register-form" id="registerForm" style="display:none;">
+        <form>
+            <div>
+                <img src="imagenes/logo.png" alt="Logo" class="img1">
+                <h2>Registro</h2>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+                <label for="emailRegistro">Correo Electrónico</label>
+                <input type="email" id="emailRegistro" name="emailRegistro" required>
+            </div>
+            <div>
+                <label for="passwordRegistro">Contraseña</label>
+                <input type="password" id="passwordRegistro" name="passwordRegistro" required>
+            </div>
+            <button type="button" class="register-btn" onclick="registrar()">Registrar</button>
+        </form>
+    </div>
+
+    <script src="js/Scriptregistro.js"></script>
+</body>
+</html>

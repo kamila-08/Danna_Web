@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('imagenes/celular.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.login-form, .register-form {
+    margin-top: 20px;
+}
+
+.login-form form, .register-form form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form h2, .register-form h2 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.login-form label, .register-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.login-form input[type="email"], .login-form input[type="password"], 
+.register-form input[type="text"], .register-form input[type="email"], .register-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-btn, .register-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Color azul original */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: #0056b3; /* Color azul más oscuro al hacer hover */
+    transform: scale(1.05);
+}
+
+.container-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.registra {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #32CD32;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.register-form button[type="button"] {
+    margin-top: 10px; /* Añade un margen superior al botón Registrar */
+}
