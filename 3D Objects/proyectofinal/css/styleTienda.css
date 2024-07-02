@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/celular.jpg');
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #1E90FF;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+h2 {
+    margin: 0;
+    font-size: 2em;
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a.cart-icon {
+    color: black;  /* Aquí está especificado el color del enlace del ícono del carrito */
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+    display: inline-block;
+}
+
+nav a.cart-icon .cart-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a.cart-icon .cart-container i {
+    font-size: 2em;
+    color: #1E90FF;
+}
+
+nav a.cart-icon span {
+    background: red;
+    border-radius: 50%;
+    padding: 3px 7px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.8em;
+    color: white;
+}
+
+nav a.cart-icon:hover .cart-container {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(30, 144, 255, 0.5);
+}
+
+#capaTexto {
+    border: 1px solid #000000;
+    width: 250px;
+    text-align: center;
+    margin-left: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: black;  /* Aquí especificamos el color del texto a negro */
+}
+
+.category-buttons {
+    margin: 20px 0;
+}
+
+.category-buttons button,
+.category-buttons .info-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.category-buttons button:hover,
+.category-buttons .info-button:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+
+section {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    flex: 1 0 250px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+}
+
+.content-item:hover {
+    transform: translateZ(50px) scale(1.09);
+}
+
+.content-item img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input[type=text] {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+.info-icon {
+    margin-left: 20px; /* Espacio entre el carrito y el signo de pregunta */
+    color: white; /* Cambia el color del ícono a blanco */
+    transition: color 0.3s ease; /* Transición suave de color */
+}
+
+.info-icon:hover {
+    color: red; /* Cambia el color del ícono a azul al hacer hover */
+}
+
+.info-container {
+    display: inline-block;
+    font-size: 50px; /* Ajusta el tamaño del ícono según sea necesario */
+    cursor: pointer;
+}
+

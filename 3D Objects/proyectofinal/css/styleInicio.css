@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/celular.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen de fondo permanezca fija cuando se desplaza la página */
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+header {
+    padding: 20px;
+}
+h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #1E90FF;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+section {
+    padding: 20px;
+}
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.content-item {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+}
+.content-item:hover {
+    transform: translateZ(50px) scale(1.09);
+}
+.content-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+.show-login-form {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.show-login-form:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+.container-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.servicio, .componentes, .cliente {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.uno {
+    color: #FFD700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial Black', sans-serif;
+}
+.dos {
+    color: #FF4500;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial Black', sans-serif;
+}
+.tres {
+    color: #32CD32;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial Black', sans-serif;
+}
+.nombre-corner {
+    position: absolute;
+    top: 10px; /* Mantén el elemento 10px desde la parte superior */
+    right: 10px; /* Mantén el elemento 10px desde la parte derecha */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente negro */
+    color: #FF4500;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial Black', sans-serif; /* Texto en blanco para mejor contraste */
+    padding: 10px 15px; /* Espaciado interno más grande */
+    border-radius: 8px; /* Bordes más redondeados */
+    font-size: 16px; /* Tamaño de fuente más grande */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para un efecto de profundidad */
+}

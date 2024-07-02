@@ -1,0 +1,75 @@
+/* Estilos comunes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-top: 50px;
+    color: white;
+    animation: slide-in 2s ease-out;
+}
+
+p {
+    color: #666;
+}
+
+/* Estilos para index.html */
+body.index {
+    background-image: url('../imagenes/celular.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.imagen {
+    background-image: url('imagenes/celular.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.index .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.index h1, .index h2 {
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Nueva fuente para el título */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 10px; /* Espacio alrededor del texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.index .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    color: white;
+    background-color:  #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.index .button:hover {
+    background-color: tomato;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

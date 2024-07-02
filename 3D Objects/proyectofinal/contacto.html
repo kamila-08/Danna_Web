@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Electro Store</title>
+    <link rel="stylesheet" href="css/styleContacto.css">
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+        <nav>
+            <a class="tienda" href="tienda.html" style="color: white;">Volver a la Tienda</a>
+        </nav>
+    </header>
+    <section id="mainContent">
+        <div id="cartItems">
+            <!-- Aquí se van a mostrar los productos del carrito -->
+        </div>
+        <div id="cartTotal">
+            <!-- Aquí se mostrará el total del carrito -->
+        </div>
+        <button class="checkout-btn" onclick="showCheckoutForm()">Finalizar Compra</button>
+    </section>
+    
+    <div class="checkout-form" id="checkoutForm">
+        <h2>Formulario de Compra</h2>
+        <form id="purchaseForm">
+            <div class="field">
+                <label class="casillas" for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+                <label class="casillas" for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+                <label class="casillas" for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="field">
+                <label class="casillas" for="address">Dirección:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="field">
+                <label for="payment">Método de Pago:</label>
+                <select id="payment" name="payment" onchange="syncAccountNumber()" required>
+                    <option value="nequi">Nequi</option>
+                    <option value="Daviplata">Daviplata</option>
+                    <option value="Bancolombia">Bancolombia</option>
+                </select>
+            </div>
+            <div class="field">
+                <label class="casillas" for="numero">Número de cuenta:</label>
+                <select id="num" name="numero" required>
+                    <option value="nequi">Nequi:3115050390</option>
+                    <option value="Daviplata">Daviplata:3223136677</option>
+                    <option value="Bancolombia">Bancolombia:03115050390</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="shipping">Medio de Envío:</label>
+                <select id="shipping" name="shipping" required>
+                    <option value="standard">Estándar (3-5 días)</option>
+                    <option value="express">Exprés (1-2 días)</option>
+                    <option value="international">Internacional (5-10 días)</option>
+                </select>
+            </div>
+            <div class="field">
+                <p id="totalPrice"></p>
+            </div>
+            <button type="submit" class="checkout-btn">Realizar Pago</button>
+        </form>
+        <div id="shippingDetails" style="display: none;">
+            <h3>Detalles del Envío:</h3>
+            <p>Tu pedido será enviado desde Pamplona, Norte de Santander.</p>
+            <p id="deliveryTime"></p>
+        </div>
+        <button class="return-btn" onclick="returnToCart()">Regresar al Carrito</button>
+    </div>
+
+    <script>
+        function syncAccountNumber() {
+            // Obtener el valor seleccionado en el método de pago
+            let paymentMethod = document.getElementById('payment').value;
+            
+            // Actualizar automáticamente el número de cuenta correspondiente
+            document.getElementById('num').value = paymentMethod;
+        }
+        
+        function displayCartItems() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsContainer = document.getElementById('cartItems');
+            let cartTotalContainer = document.getElementById('cartTotal');
+
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+            } else {
+                let totalPrice = 0;
+                cart.forEach((item, index) => {
+                    let cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+
+                    let itemImage = document.createElement('img');
+                    itemImage.src = item.image; // Utiliza la URL de la imagen del producto
+                    itemImage.alt = item.product;
+                    cartItem.appendChild(itemImage);
+
+                    let itemInfo = document.createElement('div');
+                    itemInfo.classList.add('info');
+
+                    let itemName = document.createElement('h3');
+                    itemName.textContent = item.product;
+                    itemInfo.appendChild(itemName);
+
+                    let itemPrice = document.createElement('p');
+                    itemPrice.classList.add('price');
+                    itemPrice.textContent = `$${item.price.toFixed(3)}`;
+                    itemInfo.appendChild(itemPrice);
+
+                    let removeButton = document.createElement('button');
+                    removeButton.textContent = 'Eliminar';
+                    removeButton.addEventListener('click', () => {
+                        removeFromCart(index);
+                    });
+                    itemInfo.appendChild(removeButton);
+
+                    cartItem.appendChild(itemInfo);
+                    cartItemsContainer.appendChild(cartItem);
+
+                    totalPrice += item.price;
+                });
+
+                cartTotalContainer.innerHTML = `<p>Total: $${totalPrice.toFixed(3)}</p>`;
+                document.getElementById('totalPrice').textContent = `Total a Pagar: $${totalPrice.toFixed(2)}`;
+            }
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems();
+        }
+
+        function showCheckoutForm() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('checkoutForm').style.display = 'block';
+        }
+
+        function returnToCart() {
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('checkoutForm').style.display = 'none';
+        }
+
+        document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+    }
+
+    let data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        payment: document.getElementById('payment').value,
+        shipping: document.getElementById('shipping').value
+    };
+
+    let shippingTime;
+    switch(data.shipping) {
+        case 'standard':
+            shippingTime = '3-5 días';
+            break;
+        case 'express':
+            shippingTime = '1-2 días';
+            break;
+        case 'international':
+            shippingTime = '5-10 días';
+            break;
+    }
+
+    const totalPriceElement = document.getElementById('totalPrice');
+    let totalAmount = '0.00';
+
+    if (totalPriceElement) {
+        const totalText = totalPriceElement.textContent || '';
+        const match = totalText.match(/\$?(\d+(?:\.\d{1,2})?)/); // Busca un número con un posible signo de dólar
+        if (match) {
+            totalAmount = match[1]; // Toma el primer grupo de captura
+        }
+    }
+
+    alert(`Pedido Realizado:\n\nNombre: ${data.name}\nCorreo: ${data.email}\nTeléfono: ${data.phone}\nDirección: ${data.address}\nEnvío: ${data.shipping} (${shippingTime})\nTotal a Pagar: $${totalAmount}`);
+
+    localStorage.removeItem('cart');
+    displayCartItems();
+    document.getElementById('checkoutForm').style.display = 'none';
+    document.getElementById('shippingDetails').style.display = 'block';
+    document.getElementById('deliveryTime').textContent = `Tiempo de entrega estimado: ${shippingTime}`;
+
+    // Redirigir a la página de tienda después de mostrar el mensaje
+    setTimeout(() => {
+        window.location.href = 'tienda.html';
+    }, 3); // 3000 milisegundos = 3 segundos
+});
+
+
+        window.onload = function() {
+            displayCartItems();
+            document.getElementById('mainContent').style.display = 'block';
+        };
+    </script>
+    <div class="payment-methods">
+        <img class="img1" src="imagenes/nequi.jpg" alt="Nequi">
+        <img class="img1" src="imagenes/Daviplata 1.jpg" alt="Daviplata">
+        <img class="img1" src="imagenes/images.png" alt="Bancolombia">
+    </div>
+</body>
+</html>
