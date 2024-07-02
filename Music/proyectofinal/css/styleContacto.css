@@ -1,0 +1,268 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/celular.jpg');
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #1E90FF;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+h2 {
+    margin: 0;
+    color:white;
+    font-family: 'Arial Black', sans-serif;
+}
+
+#mainContent {
+    display: flex;
+    flex-direction: column; /* Mantener el contenido principal en una columna */
+    align-items: center;
+    margin-top: 20px;
+}
+
+#cartItems {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+}
+
+.cart-item {
+    width: 200px; /* Ancho de la caja del producto */
+    margin: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Alinea el texto al centro */
+    transition: transform 0.3s ease;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-item .info {
+    margin-top: 10px;
+    color: white;
+}
+
+.cart-item .info h3 {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.cart-item .info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.cart-item .info .price {
+    font-weight: bold;
+}
+
+.cart-item button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-item button:hover {
+    background-color: #c4001d;
+    transform: scale(1.05);
+}
+
+.empty-cart {
+    font-size: 1.5em;
+    margin-top: 50px;
+}
+
+
+.checkout-form {
+    display: none;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.checkout-form h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.checkout-form .field {
+    margin-bottom: 10px;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.checkout-form input,
+.checkout-form select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkout-form button.checkout-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.checkout-form button.checkout-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.checkout-form .return-btn {
+    margin-top: 10px;
+}
+
+.checkout-form .return-btn:hover {
+    background-color: #dc3545;
+}
+
+/* Estilos para los detalles de envío */
+#shippingDetails {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#shippingDetails h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#deliveryTime {
+    margin-top: 10px;
+}
+
+.payment-methods {
+    margin-top: 10px;
+}
+
+.payment-methods img {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+/* styleTienda.css */
+/* styleTienda.css */
+
+.checkout-btn {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Padding interior del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero al pasar por encima */
+    border-radius: 4px; /* Bordes redondeados */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.checkout-btn:hover {
+    background-color: red; /* Color de fondo azul más oscuro al pasar por encima */
+}
+
+.checkout-btn:active {
+    background-color: #004899; /* Color de fondo azul oscuro cuando se presiona */
+    transform: translateY(1px); /* Efecto de desplazamiento hacia abajo */
+}
+
+/* styleTienda.css */
+
+/* Estilos para las imágenes con clase img1 */
+.img1 {
+    width: 100px; /* Ancho deseado para las imágenes img1 */
+    height: 100px; /* Altura deseada para las imágenes img1 */
+    object-fit: cover; /* Ajuste del contenido manteniendo la relación de aspecto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 10px; /* Margen derecho para separar las imágenes */
+}
+.tienda {
+    margin: 0;
+    font-size: 2em;
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.return-btn {
+    background-color: red; /* Color de fondo azul */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Padding interior del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero al pasar por encima */
+    border-radius: 4px; /* Bordes redondeados */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.return-btn:hover {
+    background-color: #007bff; /* Color de fondo azul más oscuro al pasar por encima */
+}
+
+.return-btn:active {
+    background-color: #004899; /* Color de fondo azul oscuro cuando se presiona */
+    transform: translateY(1px); /* Efecto de desplazamiento hacia abajo */
+}
+.cart-total p {
+    color:black; /* Cambia a tu color preferido */
+    font-weight: bold; /* Opcional: hacer el texto más grueso */
+    font-size: 1.2em; /* Opcional: cambiar el tamaño de la fuente */
+}
+
+#totalPrice {
+    color: black; /* Cambia a tu color preferido */
+    font-weight: bold; /* Opcional: hacer el texto más grueso */
+    font-size: 1.2em; /* Opcional: cambiar el tamaño de la fuente */
+}
+#cartTotal{
+        margin: 0;
+        font-size: 2em;
+        color:white;
+        text-shadow: 2px 2px 4px #000000;
+        letter-spacing: 2px;
+        font-family: 'Arial Black', sans-serif;
+    }

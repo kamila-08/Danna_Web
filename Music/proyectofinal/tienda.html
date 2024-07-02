@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Store</title>
+    <link rel="stylesheet" href="css/styleTienda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body onload="arrancarRotativo()">
+    <header>
+        <h1>Electro Store</h1>
+        <nav>
+            
+            <a href="contacto.html" class="cart-icon">
+                <div class="cart-container">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <span id="cartCount">0</span>
+            </a>
+            <div id="capaTexto"
+                style="border: 1px solid #000000; width: 250px; text-align: center; margin-left: 10px;"
+                onmouseover="detenerRotativo()" onmouseout="arrancarRotativo()">Dar click sobre el  Carrito
+            </div>
+        </nav>
+    </header>
+    <h2>Selecciona la categoria que deseas</h2>
+    <div class="category-buttons">
+        <button onclick="filterProducts('computo')">Computo</button>
+        <button onclick="filterProducts('celulares')">Celulares</button>
+        <button onclick="filterProducts('almacenamiento')">Almacenamiento</button>
+        <button onclick="filterProducts('audio')">Audio/Video</button>
+        <button onclick="filterProducts('zona-gamer')">Zona Gamer</button>
+        <a href="informacion.html" class="info-button">Contáctanos</a>
+    </div>
+    <section>
+        <div class="content" id="mainContent">
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/h1.jpg" alt="Componentes eléctricos">
+                <h2>Huawei P40 lite</h2>
+                <p>Capacidad: 128 GB de almacenamiento interno <br>
+                    Ancho: 76.3 mm <br>
+                    Alto: 159.2 mm <br>
+                    Grosor: 8.7 mm <br>
+                    Peso: 183 gramos <br>
+                    Modelo: Huawei P40 Lite
+                </p>
+                <p class="price">$946.659 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Huawei P40 lite', 946.659, 'imagenes/h1.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/hwaei (1).jpeg" alt="Servicio 24/7">
+                <h2>Huawei Nova Y70</h2>
+                <p>Capacidad: 128 GB de almacenamiento interno <br>
+                    Ancho: 77.7 mm <br>
+                    Alto: 168.3 mm <br>
+                    Grosor: 8.98 mm <br>
+                    Peso: 199 gramos <br>
+                    Modelo: Huawei Nova Y70</p>
+                <p class="price">$370.500 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Huawei Nova Y70', 370.500, 'imagenes/hwaei (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/hwaei (2).jpeg" alt="Servicio al cliente">
+                <h2>Huawei Nova 12i</h2>
+                <p>Capacidad: 128 GB de almacenamiento interno <br>
+                    Ancho: 76.9 mm <br>
+                    Alto: 162.9 mm <br>
+                    Grosor: 8.6 mm <br>
+                    Peso: 178 gramos <br>
+                    Modelo: Huawei Nova 12i</p>
+                <p class="price">$899.900 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Huawei Nova 12i', 899.900, 'imagenes/hwaei (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/hwaei (3).jpeg" alt="Otro producto">
+                <h2>Huawei P40</h2>
+                <p>Capacidad: 128 GB de almacenamiento interno (con opción de expansión mediante tarjeta NM de hasta 256 GB)  <br>
+                    Ancho: 71.06 mm <br>
+                    Alto: 148.9 mm <br>
+                    Grosor: 8.5 mm <br>
+                    Peso: 175 gramos <br>
+                    Modelo: Huawei P40</p>
+                <p class="price">$1.300.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Huawei P40', 1.300000 , 'imagenes/hwaei (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/r (4).jpeg" alt="Componentes eléctricos">
+                <h2>Torre Gamer Ryzen 5600x </h2>
+                <p>Modelo 3060 <br>
+                    Tipo de procesador 5600X <br>
+                    Tamaño del disco duro 1 TB <br>
+                    Marca del procesador AMD <br>
+                    Línea del procesador Ryzen 5 <br>
+                    Modelo del procesador 5600X</p>
+                <p class="price">$6.900.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Torre Gamer Ryzen 5600x ', 6.900000, 'imagenes/r (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/r3.jpeg" alt="Servicio 24/7">
+                <h2>Torre Pc Cpu Ryzen 5 7600</h2>
+                <p>Modelo 7600 <br>
+                    Tipo de procesador Ryzen <br>
+                    Tamaño del disco duro 1 TB <br>
+                    Marca del procesador AMD <br>
+                    Línea del procesador Ryzen  <br>
+                    Modelo del procesador 7600</p>
+                <p class="price">$2.700.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Torre Pc Cpu Ryzen 5 7600', 2.700000, 'imagenes/r3.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/r4.jpeg" alt="Servicio al cliente">
+                <h2>Torre Cpu Gamer Ryzen 7</h2>
+                <p>Tamaño del disco duro : 1 TB <br>
+                    Tipo de procesador : AMD Ryzen™ 7 5700G <br>
+                    RAM : 32 GB <br>
+                    Modelo AMD Radeon™ Vega 8</p>
+                <p class="price">$2.294.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Torre Cpu Gamer Ryzen 7', 2.294000, 'imagenes/r4.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/r (1).jpeg" alt="Otro producto">
+                <h2>Torre Cpu Gamer Ryzen 7</h2>
+                <p>Tamaño del disco duro : 1 TB <br>
+                    Tipo de procesador : AMD Ryzen™ 7 5700G <br>
+                    RAM : 32 GB <br>
+                    Modelo AMD Radeon™ Vega 8</p>
+                <p class="price">$2.294.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Torre Cpu Gamer Ryzen 7', 2.294000, 'imagenes/r (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/usb (4).jpeg" alt="Componentes eléctricos">
+                <h2>Memoria USB Kingston 256</h2>
+                <p>Marca Kingston <br>
+                    Modelo EXODIA ONIX <br>
+                    Capacidad de almacenamiento de datos 256 GB <br>
+                    Velocidad de lectura 130 MB/s <br>
+                    Velocidad de escritura 60 MB/s</p>
+                <p class="price">$90.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Memoria USB Kingston 256', 90.000, 'imagenes/usb (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/usb2.jpeg" alt="Servicio 24/7">
+                <h2>Memoria Usb 64 Kingston</h2>
+                <p>Marca Kingston <br>
+                    Línea DataTraveler <br>
+                    Modelo EXODIA "M" <br>
+                    Modelo detallado EXODIA M CELESTE NEON <br>
+                    Capacidad de almacenamiento de datos 64 GB
+                </p>
+                <p class="price">$30.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Memoria Usb 64 Kingston', 30.000, 'imagenes/usb2.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/usb (2).jpeg" alt="Servicio al cliente">
+                <h2>Memoria Usb 128 Kingston</h2>
+                <p>Marca Kingston <br>
+                    Línea DataTraveler <br>
+                    Modelo EXODIA "M" <br>
+                    Modelo detallado EXODIA M CELESTE NEON <br>
+                    Capacidad de almacenamiento de datos 128 GB
+                </p>
+                <p class="price">$90.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Memoria Usb 128 Kingston', 90.000, 'imagenes/usb (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/usb (1).jpeg" alt="Otro producto">
+                <h2>Memoria Usb 32 Kingston</h2>
+                <p>Marca Kingston <br>
+                    Línea DataTraveler <br>
+                    Modelo EXODIA "M" <br>
+                    Modelo detallado EXODIA M CELESTE NEON <br>
+                    Capacidad de almacenamiento de datos 32 GB
+                </p>
+                <p class="price">$20.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Memoria Usb 32 Kingston', 20.000, 'imagenes/usb (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/airprods5.jpg" alt="Nuevo producto">
+                <h2>Audífonos Inalámbricos M39</h2>
+                <p>Marca Genérica <br>
+                    Línea Airpod <br>
+                    Modelo TWS-M39 <br>
+                    Formato del audífono In-ear <br>
+                    Versión de Bluetooth 220</p>
+                <p class="price">$70.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audífonos Inalámbricos M39', 70.000, 'imagenes/airprods5.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/airprods1.jpg" alt="Producto extra">
+                <h2>Audifonos Bluetooth F9-5 </h2>
+                <p>Cuenta con tecnología True Wireless <br>
+                    Alcance inalámbrico de 10 m <br>
+                    Su clasificación IP es IPX5 <br>
+                    Tamaño del altavoz: 8mm <br>
+                    Modelo alfanumérico TWS F9 V5.1
+                </p>
+                <p class="price">$80.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audifonos Bluetooth F9-5 ', 80.000, 'imagenes/airprods1.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/airprods2.jpg" alt="Nuevo producto">
+                <h2>Audífonos Inalambricos In-ear M19</h2>
+                <p>Fabricante AAA <br>
+                    Marca Genérica <br>
+                    Línea AirPods <br>
+                    Modelo 3ra Generación <br>
+                    Modelo alfanumérico M19</p>
+                <p class="price">$60.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audífonos Inalambricos In-ear M19', 60.000, 'imagenes/airprods2.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/airprods3.jpg" alt="Producto extra">
+                <h2>Audifonos Inalambricos G9s</h2>
+                <p>Fabricante China <br>
+                    Marca Genérica <br>
+                    Línea AirPods <br>
+                    Modelo G9S 1ra Generacion <br>
+                    Modelo alfanumérico G9S</p>
+                <p class="price">$100.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audifonos Inalambricos G9s', 100.000, 'imagenes/airprods3.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (6).jpeg" alt="Nuevo producto">
+                <h2>Pc De Escritorio Hp Intel I3</h2>
+                <p>Modelo 21-b0015la <br>
+                    Memoria RAM 4 GB <br>
+                    Capacidad del disco duro 1 TB <br>
+                    Resolución de la pantalla 1920 px x 1080 px</p>
+                <p class="price">$1.350.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Pc De Escritorio Hp Intel I3', 1.350000, 'imagenes/pc1 (6).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (5).jpeg" alt="Producto extra">
+                <h2>Desktop Hp 22-df1519la I3</h2>
+                <p>Modelo 69K30LA <br>
+                    Memoria RAM 8 GB <br>
+                    Capacidad del disco duro 1 TB <br>
+                    Capacidad de disco SSD 256 GB <br></p>
+                <p class="price">$1.700.000</p>
+                <button class="add-to-cart" onclick="addToCart('Desktop Hp 22-df1519la I3', 1.700000, 'imagenes/pc1 (5).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (4).jpeg" alt="Nuevo producto">
+                <h2> Hp Intel Dual Core</h2>
+                <p>Modelo INTEL DUAL CORE J4025 <br>
+                    Memoria RAM 16 GB <br>
+                    Capacidad de disco SSD 256 GB <br>
+                    Resolución de la pantalla 1920 px x 1080 px</p>
+                <p class="price">$1.320.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart(' Hp Intel Dual Core', 1.320000, 'imagenes/pc1 (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (2).jpeg" alt="Producto extra">
+                <h2>Monitor Dell Se2422hx</h2>
+                <p>Modelo Se2422hx - V5hxx <br>
+                    Tamaño de la pantalla 23.8 " <br>
+                    Tamaño del disco duro 512 GB <br>
+                    RAM 8 GB
+                    </p>
+                <p class="price">$800.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Monitor Dell Se2422hx', 800.000, 'imagenes/pc1 (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/ms (4).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Micro Sd Kingston 4Gb</h2>
+                <p class="servicio">Capacidad de almacenamiento de 64GB  <br>
+                    Conectividad USB 3.0 <br>
+                    Tipo de conector: USB-A  <br>
+                    Material: Plástico <br>
+                    Dimensiones: 21.3mm de ancho, 56.8mm de alto y 10.8mm de profundidad</p>
+                <p class="price">$40.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Micro Sd Kingston 4Gb', 40.000, 'imagenes/ms (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/ms (3).jpeg" alt="Producto extra">
+                <h2 class="tres">Micro Sd Kingston 4Gb</h2>
+                <p class="cliente">Marca Kingston <br>
+                    Modelo SD6/4GB <br>
+                    Capacidad 4 GB <br>
+                    Formato de la tarjeta SDHC</p>
+                <p class="price">$20.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Micro Sd Kingston 4Gb', 20.000, 'imagenes/ms (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/ms (2).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Micro Sd Kingston 256Gb</h2>
+                <p class="servicio">Tarjeta MicroSDXC  <br>
+                    Su velocidad de lectura es de 100 MB/s y de escritura 80 MB/s <br>
+                    Posee adaptador de memoria <br>
+                    Su resolución máxima de video es Full HD</p>
+                <p class="price">$45.500 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Micro Sd Kingston 256Gb', 45.500, 'imagenes/ms (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="almacenamiento">
+                <img src="imagenes/ms (1).jpeg" alt="Producto extra">
+                <h2 class="tres">Micro Sd Kingston 64gb</h2>
+                <p class="cliente">Capacidad: almacenamiento de 64 GB <br>
+                    Velocidad de lectura 100 MB/s <br>
+                    Posee adaptador de memoria <br>
+                    Modelo SDCS2/64GB</p>
+                <p class="price">$23.500 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Micro Sd Kingston 64gb', 23.500, 'imagenes/ms (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/game (1).jpeg" alt="Nuevo producto">
+                <h2 class="dos">PC Gamer con procesador Intel Core i7</h2>
+                <p class="servicio">Modelo: PC Gamer con procesador Intel Core i7 <br>
+                    Tipo de procesador: Intel Core i7 <br>
+                    Tamaño de disco duro (HDD): 1 TB (1000 GB) <br>
+                    Memoria RAM: 8 GB <br>
+                    Monitor: 22 pulgadas</p>
+                <p class="price">$3.500.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('PC Gamer con procesador Intel Core i7', 3.500000, 'imagenes/game (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/game (2).jpeg" alt="Producto extra">
+                <h2 class="tres">Pc Gamer Amd Ryzen 5</h2>
+                <p class="cliente">Modelo :RYZEN 5 5600G <br>
+                    Tipo de procesador AMD RYZEN 5 5600G <br>
+                    Tamaño del disco duro 1 TB</p>
+                <p class="price">$3.399.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Pc Gamer Amd Ryzen 5', 3.399000, 'imagenes/game (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/game (3).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Pc Computador Gamer Amd Ryzen 7</h2>
+                <p class="servicio">5700g Ssd 240 Hdd 1tb Ram 16 <br>
+                    Modelo RYZEN 7 <br>
+                    Tipo de procesador AMD RYZEN 7 5700G <br>
+                    Tamaño del disco duro 240 GB</p>
+                <p class="price">$119.99</p>
+                <button class="add-to-cart" onclick="addToCart('Pc Computador Gamer Amd Ryzen 7', 79.99, 'imagenes/game (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/game 4.jpeg" alt="Producto extra">
+                <h2 class="tres">Pc Equipo Torre Gamer Amd Ryzen 5 </h2>
+                <p class="cliente">Modelo Amd Ryzen 5 <br>
+                    Tamaño del disco duro 240 GB <br>
+                    5600g Ssd 240gb Ram 16gb <br>
+                    Marca del procesador AMD</p>
+                <p class="price">$2.000.000</p>
+                <button class="add-to-cart" onclick="addToCart('Pc Equipo Torre Gamer Amd Ryzen 5', 2.000000, 'imagenes/game 4.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/sonido 6.jpeg" alt="Componentes eléctricos">
+                <h2 class="uno">Equipo de sonido LG XBOOM CL87</h2>
+                <p class="componentes">Modelo: CL87 <br>
+                    Marca: LG <br>
+                    Potencia: 2350W <br>
+                    Conexión Bluetooth: Sí <br>
+                    Radio FM: Sí</p>
+                <p class="price">$1.500.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Equipo de sonido LG XBOOM CL87', 1.500000, 'imagenes/sonido 6.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/sonido (2).jpeg" alt="Servicio 24/7">
+                <h2 class="dos">Equipo De Sonido LG Xboom Ck43</h2>
+                <p class="servicio">Modelo CK43 <br>
+                    Potencia RMS 300 W <br>
+                    Voltaje 110V <br>
+                    Altura x Ancho 25 cm x 11.8 pulgadas</p>
+                <p class="price">$1.100.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Equipo De Sonido LG Xboom Ck43', 1.000000, 'imagenes/sonido (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/sonido (3).jpeg" alt="Servicio al cliente">
+                <h2 class="tres">Equipo de sonido SC-AKX520</h2>
+                <p class="cliente">Conectividad: Puerto USB x2 / Entrada AUX (Entrada de Pines) x1 
+                    / Entrada para Micrófono x2 (6.3 mm) <br>
+                    Potencia de salida PMPO 7,150 W / 325 W</p>
+                <p class="price">$980.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Equipo de sonido SC-AKX520', 980.000, 'imagenes/sonido (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/sonido (4).jpeg" alt="Otro producto">
+                <h2 class="uno">EQUIPO DE SONIDO LG 1100</h2>
+                <p class="componentes">Potencia de salida: 1100 watts RMS <br>
+                    sistema de altavoces 2.1 <br>
+                    conexión inalámbrica con dispositivos <br>
+                    puertos USB que permiten la reproducción de archivos </p>
+                <p class="price">$79.99</p>
+                <button class="add-to-cart" onclick="addToCart('EQUIPO DE SONIDO LG 1100', 79.99, 'imagenes/sonido (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/phone1.jpg" alt="Componentes eléctricos">
+                <h2 class="uno">iPhone 13</h2>
+                <p class="componentes">CPU: Chip A15 Bionic <br>
+                    RAM: 4GB Almacenamiento: 128GB <br>
+                    Pantalla Resolución: 1170 x 2532 px OLED <br>
+                    Batería: 3240 mAh (typ) <br>
+                    Cámara Trasera: 12MP + 12MP <br>
+                    Cámara Frontal: 12MP</p>
+                <p class="price">$2.435.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('iPhone 13 ', 2.435000, 'imagenes/phone1.jpg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/phone3 (1).jpeg" alt="Servicio 24/7">
+                <h2 class="dos">iPhone 13 Max</h2>
+                <p class="servicio">Cámara Principal 11 a 15 MP <br>
+                    Memoria del Sistema Ram 4 GB <br>
+                    Capacidad de almacenamiento 128 GB <br>
+                    Tamaño de Pantalla 6.1 a 8 Pulgadas <br>
+                    Bateria 3001 a 3500 mAh</p>
+                <p class="price">$2.500.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('iPhone 13 Max', 2.500000, 'imagenes/phone3 (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/phone3 (2).jpeg" alt="Servicio al cliente">
+                <h2 class="tres">iPhone 14 Pro Max</h2>
+                <p class="cliente">Modelo iPhone 14 Pro Max <br>
+                    Memoria interna 128 GB <br>
+                    Memoria RAM 6 GB <br>
+                    Modelo del procesador Apple A16 Bionic <br>
+                    Resolución de la pantalla 2796 px x 1290 px</p>
+                <p class="price">$5.170.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('iPhone 14 Pro Max', 5.170000, 'imagenes/phone3 (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/phone3 (3).jpeg" alt="Otro producto">
+                <h2 class="uno">iPhone 15</h2>
+                <p class="componentes">Pantalla 6.1" Super Retina XDR OLED <br>
+                    Procesador Apple A16 Bionic (4nm) <br>
+                    6GB de RAM, 256GB de almacenamiento  <br>
+                    Cámara trasera doble de 48MP + 12MP y frontal de 12MP <br>
+                    Batería de 3349 mAh <br>
+                    Compatible con la red 5G</p>
+                <p class="price">$4.000.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('iPhone 15', 4.000000, 'imagenes/phone3 (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/aur (4).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Audífonos Gamer Maxell</h2>
+                <p class="servicio">Marca Maxell <br>
+                    Línea Gaming <br>
+                    Modelo Headset Force9 <br>
+                    Modelo alfanumérico Gaming Headset Force9 <br>
+                    Modelo detallado Diadema Gaming Headset Force9 CA-H-MIC</p>
+                <p class="price">$150.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audífonos Gamer Maxell', 150.000, 'imagenes/aur (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/aur (3).jpeg" alt="Producto extra">
+                <h2 class="tres">Auriculares Gamer Redragon</h2>
+                <p class="cliente">Marca Redragon <br>
+                    Línea Headset <br>
+                    Modelo HYLAS H260-RGB <br>
+                    Modelo alfanumérico H260-RGB <br>
+                    Formato del audífono Over-ear <br>
+                    Sensibilidad 110 dB</p>
+                <p class="price">$120.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Auriculares Gamer Redragon', 120.000, 'imagenes/aur (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/aur (2).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Audífonos Gamer G2600 </h2>
+                <p class="servicio">Conexión: Cableado con conector estándar de 3.5 mm <br>
+                    Sonido: Estéreo envolvente <br>
+                    Micrófono: Incorporado para comunicación <br>
+                    Compatibilidad: PC, consolas de juegos Xbox y PlayStation</p>
+                <p class="price">$93.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audífonos Gamer G2600', 93.000, 'imagenes/aur (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="zona-gamer">
+                <img src="imagenes/aur (1).jpeg" alt="Producto extra">
+                <h2 class="tres">Audífonos Gamer G2000</h2>
+                <p class="cliente">Línea Gamer <br>
+                    Modelo G2000 <br>
+                    Conectividad: inalámbrico ,Bluetooth <br>
+                    Modelo detallado G2000 AZUL-- DIADEMA GAMER CON LUZ <br>
+                    Formato del audífono Over-ear</p>
+                <p class="price">$68.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Audífonos Gamer G2000', 68.000, 'imagenes/aur (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/s (4).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Samsung Galaxy A34</h2>
+                <p class="servicio">Modelo A34 5G  <br>
+                    Memoria interna 128 GB <br>
+                    Memoria RAM 6 GB <br>
+                    Velocidad del procesador 2.6 GHz</p>
+                <p class="price">$1.140.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A34', 1.140000, 'imagenes/s (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/s.jpeg" alt="Producto extra">
+                <h2 class="tres">Samsung Galaxy A32 </h2>
+                <p class="cliente">Modelo A32 <br>
+                    Memoria RAM 4GB <br>
+                    Peso 205 gr <br>
+                    Cámara Frontal 20MP <br>
+                    Memoria Interna 128GB</p>
+                <p class="price">$2.000.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A32', 2.000000, 'imagenes/s.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/s (2).jpeg" alt="Nuevo producto">
+                <h2 class="dos">SAMSUNG Galaxy S23 FE</h2>
+                <p class="servicio">Referencia SM-S711BZA <br>
+                     Ancho 7.65 cm <br>
+                    Capacidad de almacenamiento 128 GB <br>
+                    Memoria del Sistema Ram 8 GB</p>
+                <p class="price">$1.200.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('SAMSUNG Galaxy S23 FE', 1.200000, 'imagenes/s (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/s (1).jpeg" alt="Producto extra">
+                <h2 class="tres">Samsung Galaxy A13</h2>
+                <p class="cliente">Memoria del Sistema Ram 4 GB <br>
+                    Memoria interna de 64Gb <br>
+                    Tipo de Bateria 5000 mHA <br>
+                    Cámara frontal 8.0 MP <br>
+                    Alto 16.51 cm Ancho 7.64 cm
+                </p>
+                <p class="price">$690.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A13', 690.000, 'imagenes/s (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/m (4).jpeg" alt="Nuevo producto">
+                <h2 class="dos"> Moto G84 5G </h2>
+                <p class="servicio">Modelo G84 5G <br>
+                    Memoria interna 256 GB <br>
+                    Memoria RAM 8 GB <br>
+                    Velocidad del procesador 2.2 GHz</p>
+                <p class="price">$775.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Moto G84 5G ', 775.000, 'imagenes/m (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/m (3).jpeg" alt="Producto extra">
+                <h2 class="tres"> Motorola Moto G54</h2>
+                <p class="cliente">Modelo G54 5G <br>
+                    Memoria interna 256 GB <br>
+                    Memoria RAM 8 GB <br>
+                    Velocidad del procesador 2.2 GHz</p>
+                <p class="price">$600.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Motorola Moto G54', 600.000, 'imagenes/m (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/m (2).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Motorola Moto G22</h2>
+                <p class="servicio">Modelo G22 <br>
+                    Memoria interna 128 GB <br>
+                    Memoria RAM 4 GB <br>
+                    Velocidad del procesador 2.3 GHz</p>
+                <p class="price">$530.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Otro Producto', 530.000, 'imagenes/m (2).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="celulares">
+                <img src="imagenes/m (1).jpeg" alt="Producto extra">
+                <h2 class="tres">Motorola Moto E13</h2>
+                <p class="cliente">Modelo E13 Dual SIM <br>
+                    Memoria interna 64 GB <br>
+                    Memoria RAM 2 GB <br>
+                    Almacenamiento 32 GB / 64 GB + microSD hasta 1 TB</p>
+                <p class="price">$329.900 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Motorola Moto E13', 329.900, 'imagenes/m (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc.jpeg" alt="Nuevo producto">
+                <h2 class="dos">Potátil 255 G7 15.6</h2>
+                <p class="servicio">Modelo detallado 28S75LTABM <br>
+                    Resolución de la pantalla 1366 px x 768 px  <br>
+                    Memoria RAM 8 GB <br>
+                    Capacidad del disco duro 1 TB</p>
+                <p class="price">$1.500.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Potátil 255 G7 15.6', 1.500000, 'imagenes/pc.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (1).jpeg" alt="Producto extra">
+                <h2 class="tres">Potátil Laptop 14</h2>
+                <p class="cliente">Modelo 14-dq5016la <br>
+                    Memoria RAM 20 GB <br>
+                    Velocidad máxima del procesador 4.4 GHz <br>
+                    Resolución de la pantalla 1366 px x 768 px</p>
+                <p class="price">$1.800.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Potátil Laptop 14', 1.800000, 'imagenes/pc1 (1).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc1 (3).jpeg" alt="Nuevo producto">
+                <h2 class="dos">LAPTOP DELL VOSTRO CORE i5</h2>
+                <p class="servicio">
+                    Velocidad de Procesador	2.40GHz <br>
+                    Memoria Estándar 8GB <br>
+                    Modelo de Producto	3400 <br>
+                    Resolución de la Pantalla	1366 x 768</p>
+                <p class="price">$2.400.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('LAPTOP DELL VOSTRO CORE i5', 2.400000, 'imagenes/pc1 (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="computo">
+                <img src="imagenes/pc123.jpeg" alt="Producto extra">
+                <h2 class="tres">Portátil Dell Vostro Intel I3 </h2>
+                <p class="cliente">Modelo P132G-649HN <br>
+                    Capacidad de disco SSD 256 GB <br>
+                    Interfaz del disco duro SATA 3 <br>
+                    Resolución de la pantalla 1366 px x 768 px
+                </p>
+                <p class="price">$1.360.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Portátil Dell Vostro Intel I3 ', 1.360000, 'imagenes/pc123.jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/tv (4).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Hyundai 50 Pulgadas Smart 4k</h2>
+                <p class="servicio">Conectividad : Wi-Fi Bluetooth USB HDMI <br>
+                    Tipo de resolución :4K <br>
+                    Sistema operativo webOS  <br>
+                    Modelo HYLED5017W4KM</p>
+                <p class="price">$1.324.900 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Hyundai 50 Pulgadas Smart 4k', 1.324900, 'imagenes/tv (4).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/tv (3).jpeg" alt="Producto extra">
+                <h2 class="tres">TV Samsung Crystal UHD 64</h2>
+                <p class="cliente">Conectividad :Wi-Fi Bluetooth Ethernet HDMI <br>
+                    Frecuencia : 50 Hz x 60 Hz <br>
+                    Voltaje : 100V/240V <br>
+                    Modelo UN65BU8000G</p>
+                <p class="price">$2.391.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('TV Samsung Crystal UHD 64', 2.391000, 'imagenes/tv (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/tv (2).jpeg" alt="Nuevo producto">
+                <h2 class="dos">Tv LG 65 Uhd 4k Thinq</h2>
+                <p class="servicio">Conectividad :Wi-Fi Bluetooth HDMI <br>
+                    Peso 21.6 kg <br>
+                    Ancho x Profundidad x Altura 145.4 cm x 5.77 cm x 83.8 cm <br>
+                    Modelo 65ur8750psa</p>
+                <p class="price">$3.499.900 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('Tv LG 65 Uhd 4k Thinq', 3.499900, 'imagenes/tv (3).jpeg')">Añadir al carrito</button>
+            </div>
+            <div class="content-item" data-category="audio">
+                <img src="imagenes/tv (1).jpeg" alt="Producto extra">
+                <h2 class="tres">LG SMART TV 32</h2>
+                <p class="cliente">Conectividad :Wi-Fi Bluetooth Ethernet <br>
+                    Voltaje: 110V/220V <br>
+                    Frecuencia: 60 Hz <br>
+                    Modelo LR650</p>
+                <p class="price">$820.000 pesos</p>
+                <button class="add-to-cart" onclick="addToCart('LG SMART TV 32', 820.000, 'imagenes/tv (1).jpeg')">Añadir al carrito</button>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/ScriptTienda.js"></script>
+</body>
+</html>
